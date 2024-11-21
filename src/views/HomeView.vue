@@ -1,5 +1,5 @@
 <script setup>
-import MovieCard from '@/components/MovieCard.vue';
+import MovieListings from '@/components/MovieListings.vue';
 import Title from '@/components/Title.vue';
 import { ref } from 'vue';
 
@@ -21,14 +21,7 @@ const viewAllMovies = () => {
 <template>
     <div class="bg-gradient-to-r from-blue-100 via-indigo-200 to-purple-200">
       <Title title="Highest Rated Movies"/>
-      <div class="container mx-auto p-6">
-        <div class="grid gap-20 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
-          <MovieCard
-            v-for="(index, idx) in displayedCards"
-            :key="idx"
-          />
-        </div>
-  
+      <MovieListings />
         <div class="text-center mt-6">
           <button
             @click="loadMore"
@@ -46,5 +39,4 @@ const viewAllMovies = () => {
           </button>
         </div>
       </div>
-    </div>
   </template>
