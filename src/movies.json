@@ -1,4 +1,5 @@
-[
+{
+"movies": [
   {
     "id": "1",
     "title": "Senior Vue Dev",
@@ -162,3 +163,4 @@
     "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
   }
 ]
+}

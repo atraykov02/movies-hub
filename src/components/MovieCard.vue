@@ -54,7 +54,7 @@ function getStars(rating) {
 
             <!-- Бутон "Виж още" -->
             <RouterLink
-                :to="'/movie/' + movie.id"
+                :to="'/movies/' + movie.id"
                 class="w-full px-6 py-3 text-lg font-medium text-white bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full shadow-lg hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
                 Виж още
             </RouterLink>

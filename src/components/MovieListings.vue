@@ -1,10 +1,15 @@
 <script setup>
-import movieData from '@/movies.json';
-import { onMounted, ref } from 'vue';
+import axios from 'axios';
+import { onMounted, reactive, ref } from 'vue';
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 import MovieCard from './MovieCard.vue';
 const emit = defineEmits(['jsonLoaded']);
 
-const movies = ref(movieData);
+const state = reactive({
+    movies: [],
+    isLoading: true
+});
+
 const limitCount = ref(4);
 defineProps({
     limit: Number,
@@ -16,7 +21,16 @@ defineProps({
 
 onMounted (async () => {
 // const response  =  await getJson();
-  emit('jsonLoaded', movies.value.length);
+  try {
+    const response = await axios.get('http://localhost:8000/movies');
+    state.movies = response.data;
+  } catch (error) {
+    console.error('Error fetching movies', error);
+  } finally {
+    state.isLoading = false;
+  }
+
+  emit('jsonLoaded', state.movies.length);
 });
 const loadMore = () => {
   limitCount.value += 4;
@@ -26,12 +40,20 @@ const loadMore = () => {
 <template>
     <section class="bg-blue-50 px-4 py-10">
         <div class="container-xl lg:container m-auto">
-            <h2 class="text-3xl font-bold text-blue-500 mb-6 text-center">
+            <h2 v-if="!showLoadMoreBtn" class="text-3xl font-bold text-blue-500 mb-6 text-center">
                 Browse Movies
             </h2>
-            <div class="container mx-auto p-6">
+
+            <!-- Show loading spinner while loading is true -->
+            <div v-if="state.isLoading" class="text-center text-gray-500 py-6">
+                <PulseLoader />
+            </div>
+
+            <!-- Show movies when done loading-->
+
+            <div v-else class="container mx-auto p-6">
                 <div class="grid gap-20 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
-                    <MovieCard v-for="movie in movies.slice(0, showLoadMoreBtn ? limitCount : movies.length)" :key="movie.id" :movie="movie" />
+                    <MovieCard v-for="movie in state.movies.slice(0, showLoadMoreBtn ? limitCount : state.movies.length)" :key="movie.id" :movie="movie" />
                 </div>
             </div>
 

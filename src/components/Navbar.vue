@@ -1,6 +1,11 @@
 <script setup>
   import logo from '@/components/icons/logo.png';
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRoute } from 'vue-router';
+
+const isActiveLink = (routePath) => {
+  const route = useRoute();
+  return route.path === routePath;
+}
 </script>
 
 <template>
@@ -21,18 +26,39 @@ import { RouterLink } from 'vue-router';
               <div class="flex space-x-2">
                 <RouterLink
                   to="/"
-                  class="text-white bg-green-900 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                  :class="[
+                    isActiveLink('/') 
+                    ? 'bg-green-900' 
+                    : 'hover:bg-gray-900 hover:text-white',
+                    'text-white',
+                    'px-3',
+                    'py-2',
+                    'rounded-md']"
                   >Home</RouterLink
                 >
                 <RouterLink
                   to="/movies"
-                  class="text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2"
+                  :class="[
+                    isActiveLink('/movies') 
+                    ? 'bg-green-900' 
+                    : 'hover:bg-gray-900 hover:text-white',
+                    'text-white',
+                    'px-3',
+                    'py-2',
+                    'rounded-md']"
                   >Movies</RouterLink
                 >
                 <RouterLink
-                  to="/add-job"
-                  class="text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2"
-                  >Add Job</RouterLink
+                  to="/movies/add"
+                  :class="[
+                    isActiveLink('/movies/add') 
+                    ? 'bg-green-900' 
+                    : 'hover:bg-gray-900 hover:text-white',
+                    'text-white',
+                    'px-3',
+                    'py-2',
+                    'rounded-md']"
+                  >Add Movie</RouterLink
                 >
               </div>
             </div>

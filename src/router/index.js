@@ -1,4 +1,5 @@
 import HomeView from '@/views/HomeView.vue';
+import MoviesView from '@/views/MoviesView.vue';
 import MovieView from '@/views/MovieView.vue';
 import NotFoundView from '@/views/NotFoundView.vue';
 import { createRouter, createWebHistory } from 'vue-router';
@@ -14,6 +15,11 @@ const router = createRouter({
         {
             path: '/movies',
             name: 'movies',
+            component: MoviesView,
+        },
+        {
+            path: '/movies/:id',
+            name: 'movie',
             component: MovieView,
         },
         {
