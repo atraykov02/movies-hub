@@ -1,121 +1,86 @@
 <script setup>
-  import axios from 'axios';
+import axios from 'axios';
 import { onMounted, reactive } from 'vue';
 import { useRoute } from 'vue-router';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 
-  const route = useRoute();
+const route = useRoute();
 
-  const movieId = route.params.id;
+const movieId = route.params.id;
 
-  const state = reactive({
-    movie: {},
-    isLoading: true
-  });
+const state = reactive({
+  movie: {},
+  isLoading: true
+});
 
-  onMounted (async () => {
-// const response  =  await getJson();
+onMounted(async () => {
   try {
     const response = await axios.get(`http://localhost:8000/movies/${movieId}`);
-    state.movies = response.data;
+    state.movie = response.data;
   } catch (error) {
     console.error('Error fetching movie', error);
   } finally {
     state.isLoading = false;
   }
-
-  emit('jsonLoaded', state.movies.length);
 });
-  
+
+const deleteMovie = async () => {
+  if (confirm('Are you sure you want to delete this movie?')) {
+    try {
+      await axios.delete(`http://localhost:8000/movies/${movieId}`);
+      window.location.href = '/';
+    } catch (error) {
+      console.error('Error deleting movie', error);
+    }
+  }
+};
 </script>
 
 <template>
-    <section v-if="!state.isLoading" class="bg-green-50">
-      <div class="container m-auto py-10 px-6">
-        <div class="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
-          <main>
-            <div
-              class="bg-white p-6 rounded-lg shadow-md text-center md:text-left"
+  <div class="h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex flex-col">
+    <div v-if="state.isLoading" class="flex justify-center items-center h-full">
+      <PulseLoader color="#2563eb" size="15px" />
+    </div>
+
+    <div v-else class="relative h-full w-full">
+      <!-- Background image -->
+      <div
+        class="absolute inset-0 bg-cover bg-center opacity-30"
+        :style="{ backgroundImage: `url(${state.movie.imageURL})` }"
+      ></div>
+
+      <!-- Content overlay -->
+      <div class="relative z-10 flex flex-col h-full items-center justify-center text-center px-6">
+        <div class="bg-black bg-opacity-60 p-8 rounded-lg max-w-3xl">
+          <h1 class="text-5xl font-extrabold mb-4">{{ state.movie.title }}</h1>
+          <p class="text-xl mb-2"><span class="font-semibold">Year:</span> {{ state.movie.year }}</p>
+          <p class="text-xl mb-2"><span class="font-semibold">Genre:</span> {{ state.movie.genre }}</p>
+          <p class="text-xl mb-2"><span class="font-semibold">Rating:</span> {{ state.movie.rating }}</p>
+          <p class="mt-4 text-lg leading-relaxed">{{ state.movie.description }}</p>
+
+          <div class="mt-6 flex justify-center space-x-6">
+            <button
+              class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white text-lg font-bold rounded-lg shadow-md transition duration-300"
+              @click="deleteMovie"
             >
-              <div class="text-gray-500 mb-4">Full-Time</div>
-              <h1 class="text-3xl font-bold mb-4">Senior Vue Developer</h1>
-              <div
-                class="text-gray-500 mb-4 flex align-middle justify-center md:justify-start"
-              >
-                <i
-                  class="fa-solid fa-location-dot text-lg text-orange-700 mr-2"
-                ></i>
-                <p class="text-orange-700">Boston, MA</p>
-              </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-md mt-6">
-              <h3 class="text-green-800 text-lg font-bold mb-6">
-                Job Description
-              </h3>
-
-              <p class="mb-4">
-                We are seeking a talented Front-End Developer to join our team
-                in Boston, MA. The ideal candidate will have strong skills in
-                HTML, CSS, and JavaScript, with experience working with modern
-                JavaScript frameworks such as Vue or Angular.
-              </p>
-
-              <h3 class="text-green-800 text-lg font-bold mb-2">Salary</h3>
-
-              <p class="mb-4">$70k - $80K / Year</p>
-            </div>
-          </main>
-
-          <!-- Sidebar -->
-          <aside>
-            <!-- Company Info -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <h3 class="text-xl font-bold mb-6">Company Info</h3>
-
-              <h2 class="text-2xl">NewTek Solutions</h2>
-
-              <p class="my-2">
-                NewTek Solutions is a leading technology company specializing in
-                web development and digital solutions. We pride ourselves on
-                delivering high-quality products and services to our clients
-                while fostering a collaborative and innovative work environment.
-              </p>
-
-              <hr class="my-4" />
-
-              <h3 class="text-xl">Contact Email:</h3>
-
-              <p class="my-2 bg-green-100 p-2 font-bold">
-                contact@newteksolutions.com
-              </p>
-
-              <h3 class="text-xl">Contact Phone:</h3>
-
-              <p class="my-2 bg-green-100 p-2 font-bold">555-555-5555</p>
-            </div>
-
-            <!-- Manage -->
-            <div class="bg-white p-6 rounded-lg shadow-md mt-6">
-              <h3 class="text-xl font-bold mb-6">Manage Job</h3>
-              <a
-                href="add-job.html"
-                class="bg-green-500 hover:bg-green-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
-                >Edit Job</a
-              >
-              <button
-                class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
-              >
-                Delete Job
-              </button>
-            </div>
-          </aside>
+              Delete
+            </button>
+            <RouterLink
+              :to="`/movies/edit/${movieId}`"
+              class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold rounded-lg shadow-md transition duration-300"
+            >
+              Edit
+            </RouterLink>
+          </div>
         </div>
       </div>
-    </section>
-    
-    <!-- Show loading spinner while loading is true -->
-    <div v-else class="text-center text-gray-500 py-6">
-                <PulseLoader />
-            </div>
+    </div>
+  </div>
 </template>
+
+<style scoped>
+html, body {
+  margin: 0;
+  height: 100%;
+}
+</style>
