@@ -1,3 +1,4 @@
+import AddMovieView from '@/views/AddMovieView.vue';
 import EditMovieView from '@/views/EditMovieView.vue';
 import HomeView from '@/views/HomeView.vue';
 import MoviesView from '@/views/MoviesView.vue';
@@ -31,7 +32,7 @@ const router = createRouter({
         {
             path: '/movies/add',
             name: 'add-movie',
-            component: EditMovieView,
+            component: AddMovieView,
         },
         {
             path: '/:catchAll(.*)',

@@ -1,14 +1,11 @@
 <script setup>
 import axios from 'axios';
-import { onMounted, reactive } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { reactive } from 'vue';
+import { useRouter } from 'vue-router';
 import { useToast } from 'vue-toastification';
 
-const route = useRoute();
 const router = useRouter();
 const toast = useToast();
-
-const movieId = route.params.id;
 
 const formData = reactive({
   movie: {
@@ -21,13 +18,8 @@ const formData = reactive({
   }
 });
 
-const state = reactive({
-  movie: {},
-  isLoading: true
-});
-
 const handleSubmit = async () => {
-  const updateMovie = {
+  const newMovie = {
     title: formData.movie.title,
     year: formData.movie.year,
     genre: formData.movie.genre,
@@ -36,40 +28,21 @@ const handleSubmit = async () => {
     imageURL: formData.movie.imageURL
   }
   try {
-    const response = await axios.put(`/api/movies/${movieId}`, updateMovie);
-    toast.success('Movie updated successfully!');
+    const response = await axios.post('/api/movies/', newMovie);
+    toast.success('Movie added successfully!');
     router.push(`/movies/${response.data.id}`);
   } catch (error) {
-    console.error('Error updating movie:', error);
-    toast.error('Movie was not updated!')
+    console.error('Error adding movie:', error);
+    toast.error('Movie was not added!')
   }
 };
-
-onMounted(async () => {
-  try {
-    const response = await axios.get(`/api/movies/${movieId}`);
-    state.movie = response.data;
-    // Populate inputs
-    formData.movie.title = state.movie.title;
-    formData.movie.year = state.movie.year;
-    formData.movie.genre = state.movie.genre;
-    formData.movie.rating = state.movie.rating;
-    formData.movie.description = state.movie.description;
-    formData.movie.imageURL = state.movie.imageURL;
-  } catch (error) {
-    console.error('Error fetching movie', error);
-  }
-  finally {
-    state.isLoading = false;
-  }
-});
 
 </script>
 
 <template>
   <div class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex items-center justify-center p-6">
     <div class="bg-gray-800 p-8 rounded-lg shadow-2xl w-full max-w-3xl">
-      <h1 class="text-3xl font-bold mb-6 text-center">Edit Movie</h1>
+      <h1 class="text-3xl font-bold mb-6 text-center">Add Movie</h1>
 
       <form @submit.prevent="handleSubmit" class="space-y-4">
         <div>
@@ -161,9 +134,9 @@ onMounted(async () => {
           </button>
           <button
             type="submit"
-            class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"
+            class="px-6 py-2 bg-green-700 text-white rounded-lg hover:bg-green-900 focus:ring-2 focus:ring-green-500"
           >
-            Save Changes
+            Add Movie
           </button>
         </div>
       </form>
