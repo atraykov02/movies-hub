@@ -9,7 +9,7 @@ const isActiveLink = (routePath) => {
 </script>
 
 <template>
-    <nav class="bg-green-700 border-b border-green-500">
+    <nav class="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 border-b border-gray-600">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="flex h-20 items-center justify-between">
           <div
@@ -18,7 +18,7 @@ const isActiveLink = (routePath) => {
             <!-- Logo -->
             <RouterLink class="flex flex-shrink-0 items-center mr-4" to="/">
               <img class="h-10 w-auto" :src="logo" alt="Vue Jobs" />
-              <span class="hidden md:block text-white text-2xl font-bold ml-2"
+              <span class="hidden md:block text-gray-200 text-2xl font-bold ml-2"
                 >Movies Hub</span
               >
             </RouterLink>
@@ -28,9 +28,9 @@ const isActiveLink = (routePath) => {
                   to="/"
                   :class="[
                     isActiveLink('/') 
-                    ? 'bg-green-900' 
-                    : 'hover:bg-gray-900 hover:text-white',
-                    'text-white',
+                    ? 'bg-gray-700' 
+                    : 'hover:bg-gray-600 hover:text-gray-300',
+                    'text-gray-200',
                     'px-3',
                     'py-2',
                     'rounded-md']"
@@ -40,9 +40,9 @@ const isActiveLink = (routePath) => {
                   to="/movies"
                   :class="[
                     isActiveLink('/movies') 
-                    ? 'bg-green-900' 
-                    : 'hover:bg-gray-900 hover:text-white',
-                    'text-white',
+                    ? 'bg-gray-700' 
+                    : 'hover:bg-gray-600 hover:text-gray-300',
+                    'text-gray-200',
                     'px-3',
                     'py-2',
                     'rounded-md']"
@@ -52,9 +52,9 @@ const isActiveLink = (routePath) => {
                   to="/movies/add"
                   :class="[
                     isActiveLink('/movies/add') 
-                    ? 'bg-green-900' 
-                    : 'hover:bg-gray-900 hover:text-white',
-                    'text-white',
+                    ? 'bg-gray-700' 
+                    : 'hover:bg-gray-600 hover:text-gray-300',
+                    'text-gray-200',
                     'px-3',
                     'py-2',
                     'rounded-md']"

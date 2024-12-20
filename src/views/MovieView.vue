@@ -1,10 +1,14 @@
 <script setup>
+import BackButton from '@/components/BackButton.vue';
 import axios from 'axios';
 import { onMounted, reactive } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+import { useToast } from 'vue-toastification';
 
 const route = useRoute();
+const router = useRouter();
+const toast = useToast();
 
 const movieId = route.params.id;
 
@@ -15,7 +19,7 @@ const state = reactive({
 
 onMounted(async () => {
   try {
-    const response = await axios.get(`http://localhost:8000/movies/${movieId}`);
+    const response = await axios.get(`/api/movies/${movieId}`);
     state.movie = response.data;
   } catch (error) {
     console.error('Error fetching movie', error);
@@ -27,16 +31,19 @@ onMounted(async () => {
 const deleteMovie = async () => {
   if (confirm('Are you sure you want to delete this movie?')) {
     try {
-      await axios.delete(`http://localhost:8000/movies/${movieId}`);
-      window.location.href = '/';
+      await axios.delete(`/api/movies/${movieId}`);
+      toast.success('Movie deleted successfully!');
+      router.push('/movies');
     } catch (error) {
       console.error('Error deleting movie', error);
+      toast.success('Error deleting movie!');
     }
   }
 };
 </script>
 
 <template>
+  <BackButton />
   <div class="h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex flex-col">
     <div v-if="state.isLoading" class="flex justify-center items-center h-full">
       <PulseLoader color="#2563eb" size="15px" />
@@ -66,7 +73,7 @@ const deleteMovie = async () => {
               Delete
             </button>
             <RouterLink
-              :to="`/movies/edit/${movieId}`"
+              :to="`/movies/edit/${state.movie.id}`"
               class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold rounded-lg shadow-md transition duration-300"
             >
               Edit

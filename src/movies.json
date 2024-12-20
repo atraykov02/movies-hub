@@ -1,157 +1,148 @@
 {
   "movies": [
     {
-      "id": "2",
-      "title": "POCHIVKATA",
-      "year": 2024,
-      "genre": "Boston, MA",
+      "title": "Inception",
+      "year": "2010",
+      "genre": "Sci-Fi",
+      "rating": 4,
+      "description": "A skilled thief, specialized in stealing secrets through dream-sharing technology, is offered a chance to have his criminal history erased. To succeed, he must achieve the impossible: planting an idea in someone's subconscious, leading to a thrilling journey through dream layers.",
+      "imageURL": "https://images7.alphacoders.com/586/586904.jpg",
+      "id": "1"
+    },
+    {
+      "title": "The Dark Knight",
+      "year": "2008",
+      "genre": "Action",
+      "rating": "5",
+      "description": "With the help of allies, Batman faces a criminal mastermind known as the Joker, who wreaks havoc in Gotham. The city is thrown into chaos as the Joker pushes Batman to his limits in a psychological battle of morality and justice.",
+      "imageURL": "https://images8.alphacoders.com/457/thumb-1920-457955.jpg",
+      "id": "2"
+    },
+    {
+      "title": "Forrest Gump",
+      "year": "1994",
+      "genre": "Drama",
+      "rating": 4,
+      "description": "Forrest Gump, a man with a low IQ but a heart of gold, narrates his extraordinary life journey. From football star to war hero to shrimp tycoon, he touches countless lives and becomes part of major historical events without even trying.",
+      "imageURL": "https://images.alphacoders.com/802/thumb-1920-802591.jpg",
+      "id": "3"
+    },
+    {
+      "title": "Interstellar",
+      "year": "2014",
+      "genre": "Sci-Fi",
+      "rating": 4,
+      "description": "In a near-future Earth plagued by environmental collapse, a team of explorers ventures into a wormhole near Saturn in search of a new home for humanity. This emotional journey tests the limits of human endurance, sacrifice, and love.",
+      "imageURL": "https://images7.alphacoders.com/111/thumb-1920-1115466.jpg",
+      "id": "4"
+    },
+    {
+      "title": "Gladiator",
+      "year": "2000",
+      "genre": "Action",
+      "rating": 4,
+      "description": "After being betrayed and seeing his family murdered by a corrupt Roman emperor, Maximus rises as a gladiator. Fighting for survival and revenge, he inspires the people of Rome and challenges the tyranny of the empire.",
+      "imageURL": "https://images7.alphacoders.com/696/696750.jpg",
+      "id": "5"
+    },
+    {
+      "title": "The Shawshank Redemption",
+      "year": "1994",
+      "genre": "Drama",
+      "rating": 3,
+      "description": "Two imprisoned men bond over decades, sharing moments of hope and despair. Through persistence and friendship, they find ways to cope and ultimately reclaim their dignity, in a tale of hope and redemption against all odds.",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8U-8E7Xo-Nz1cXtARXbpfKXL-II0kWbz72w&s",
+      "id": "6"
+    },
+    {
+      "title": "The Matrix",
+      "year": "1999",
+      "genre": "Sci-Fi",
       "rating": 5,
-      "imageURL": "https://static.dir.bg/uploads/images/2021/12/07/2285932/1920x1080.jpg?_=1643701301",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
+      "description": "Neo, a hacker, discovers the truth about his reality: it's a simulated world controlled by machines. He joins a rebellion led by Morpheus and Trinity to free humanity and confront his destiny as 'The One' in a fight for liberation.",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHagghFfvtm3ajAf5rn6iORQl7qKCG4ECPUA&s",
+      "id": "7"
     },
     {
-      "id": "3",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
+      "title": "Pulp Fiction",
+      "year": "1994",
+      "genre": "Drama",
+      "rating": 4,
+      "description": "Interweaving stories of crime, humor, and chaos, Pulp Fiction follows hitmen, a gangster's wife, and a boxer. Their paths cross in unexpected ways, creating unforgettable moments of dark humor and intense drama.",
+      "imageURL": "https://images8.alphacoders.com/499/499674.jpg",
+      "id": "8"
     },
     {
-      "id": "4",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
+      "title": "Avengers: Endgame",
+      "year": "2019",
+      "genre": "Action",
+      "rating": 4,
+      "description": "After Thanos' devastating snap, the Avengers must band together one last time to undo the damage. In an epic battle spanning time and space, they risk everything to restore hope and balance to the universe.",
+      "imageURL": "https://i.redd.it/6bwbcxcr2pn21.jpg",
+      "id": "9"
     },
     {
-      "id": "5",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
+      "title": "The Lion King",
+      "year": "1994",
+      "genre": "Animation",
+      "rating": 5,
+      "description": "Simba, a young lion prince, is destined to be king, but tragedy forces him to flee. Guided by new friends and his inner strength, he must return to reclaim his place in the Circle of Life and save his kingdom.",
+      "imageURL": "https://uhdwallpapers.org/download/simba-the-lion-king_788756/1920x1080/",
+      "id": "10"
     },
     {
-      "id": "6",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
+      "title": "Titanic",
+      "year": "1997",
+      "genre": "Romance",
+      "rating": 4,
+      "description": "Jack and Rose, two lovers from different social classes, meet aboard the ill-fated RMS Titanic. As their love blossoms, they face the impending disaster that changes their lives forever.",
+      "imageURL": "https://images4.alphacoders.com/699/thumb-1920-699663.jpg",
+      "id": "11"
     },
     {
-      "id": "7",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
+      "title": "Star Wars: A New Hope",
+      "year": "1977",
+      "genre": "Sci-Fi",
+      "rating": 4,
+      "description": "Luke Skywalker, a farm boy, joins the Rebel Alliance to battle the Galactic Empire. With the help of allies, he must destroy the Death Star and embrace his destiny as a Jedi.",
+      "imageURL": "https://images5.alphacoders.com/675/thumb-1920-675813.jpg",
+      "id": "12"
     },
     {
-      "id": "8",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
+      "title": "The Godfather",
+      "year": "1972",
+      "genre": "Drama",
+      "rating": 4,
+      "description": "The aging patriarch of the Corleone crime family transfers power to his reluctant son, Michael. This tale of loyalty, betrayal, and ambition defines the complexities of family and power.",
+      "imageURL": "https://external-preview.redd.it/6yvME5L39jCoSfV5pfEA3og4xwEei5B8WILyMok0JSM.jpg?auto=webp&s=4b98e7788fe50be8b2dd7b33d9f96f05758f9613",
+      "id": "13"
     },
     {
-      "id": "9",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
+      "title": "Fight Club",
+      "year": "1999",
+      "genre": "Drama",
+      "rating": 4,
+      "description": "An insomniac and a soap salesman start an underground fight club as an escape from societal constraints. Their rebellion spirals out of control, leading to shocking revelations about identity and purpose.",
+      "imageURL": "https://images6.alphacoders.com/126/1269171.jpg",
+      "id": "14"
     },
     {
-      "id": "10",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
+      "title": "Jurassic Park",
+      "year": "1993",
+      "genre": "Fantasy",
+      "rating": 5,
+      "description": "A revolutionary theme park populated with genetically-engineered dinosaurs becomes a nightmare when the creatures escape. Guests must fight for survival against prehistoric predators.",
+      "imageURL": "https://wallpapers.com/images/featured/jurassic-park-background-jun6q0xyb756aozy.jpg",
+      "id": "15"
     },
     {
-      "id": "11",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
-    },
-    {
-      "id": "12",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
-    },
-    {
-      "id": "13",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
-    },
-    {
-      "id": "14",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
-    },
-    {
-      "id": "15",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
-    },
-    {
-      "id": "16",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
-    },
-    {
-      "id": "17",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
-    },
-    {
-      "id": "18",
-      "title": "Senior Vue Dev",
-      "year": "Full-Time",
-      "genre": "Boston, MA",
-      "rating": "3",
-      "imageURL": "$90K - $100K",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment."
+      "title": "The Lord of the Rings: The Return of the King",
+      "year": "2003",
+      "genre": "Fantasy",
+      "rating": 4,
+      "description": "Frodo and Sam reach Mount Doom as the final battle for Middle-earth begins. With allies risking everything, they confront ultimate darkness in this epic conclusion to the trilogy.",
+      "imageURL": "https://images5.alphacoders.com/531/531080.jpg",
+      "id": "16"
     }
   ]
 }
